@@ -1,0 +1,175 @@
+@charset "UTF-8";
+font-face {
+  font-family: Larson; /* имя шрифта для CSS правил */
+  src: local("Larson"), url(Larson.eot); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+}
+
+divgrad {
+  height: 453px;
+  background: linear-gradient(45deg, #284e57, #8bb9b9), url(https://html5book.ru/wp-content/uploads/2016/12/photo-8.jpg);
+  background-size: cover;
+}
+
+@media screen {
+  body {
+    background-color: #bfd6d3;
+    font-size: 20px;
+    font-variant: small-caps;
+    color: a9a9a9;
+    line-height: 1.5;
+  }
+}
+@media print {
+  body {
+    background-color: black;
+    font-family: Times, "Times New Roman", serif; /* Шрифт с засечками */
+    font-size: 20px;
+    font-variant: small-caps;
+    color: #eef0e7;
+    line-height: 1.5;
+  }
+}
+ul ul li {
+  list-style-image: url(../Images/lox.png);
+}
+
+body > ul {
+  color: #69604d;
+}
+
+big + i {
+  color: #284e57;
+}
+
+h2:hover {
+  color: #8bb9b9;
+}
+
+ol {
+  list-style-image: none;
+  list-style-type: square;
+}
+
+/* задаем цвет фона для контейнера nav. */
+nav {
+  background-color: #bfd6d3;
+  border: 4px solid #eef0e7; /* Параметры границы */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* убираем отступы и поля, а также list-style для "ul", 
+ * и добавляем "position:relative" */
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+/* применяем inline-block позиционирование к элементам навигации */
+nav ul li {
+  margin: 0px -7px 0 0;
+  display: inline-block;
+  background-color: #69604d;
+}
+
+/* стилизуем ссылки */
+nav a {
+  display: block;
+  padding: 0 10px;
+  color: #FFF;
+  font-size: 20px;
+  line-height: 60px;
+  text-decoration: none;
+}
+
+/* изменяем цвет фона при наведении курсора */
+nav a:hover {
+  background-color: #000000;
+}
+
+/* скрываем выпадающие списки по умолчанию
+ * и задаем абсолютное позиционирование */
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+}
+
+/* отображаем выпадающий список при наведении */
+nav ul li:hover > ul {
+  display: inherit;
+}
+
+/* первый уровень выпадающего списка */
+nav ul ul li {
+  min-width: 170px;
+  float: none;
+  display: list-item;
+  position: relative;
+}
+
+[title] {
+  position: relative;
+}
+
+[title]:after {
+  font-size: 20px;
+  content: attr(title);
+  color: #FFFFFF;
+  background: #E0FFF1;
+  padding: 10px;
+  position: absolute;
+  left: 100px;
+  opacity: 0;
+  bottom: 100%;
+  white-space: nowrap;
+  transition: 0.25s linear opacity;
+}
+
+[title]:hover:after {
+  left: 5px;
+  opacity: 1;
+}
+
+.scale {
+  transition: 1s; /* Время эффекта */
+}
+
+.scale:hover {
+  transform: scale(1.2); /* Увеличиваем масштаб */
+}
+
+.object {
+  position: absolute;
+  transition: all 2s ease-in-out;
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+}
+
+.van {
+  top: 0%;
+  left: 44%;
+}
+
+#axis:hover .move-right {
+  transform: translate(350px, 0);
+  -webkit-transform: translate(350px, 0);
+  -o-transform: translate(350px, 0);
+  -moz-transform: translate(350px, 0);
+}
+
+.flex-container {
+  display: flex;
+  width: 1100px;
+}
+
+.flex-item {
+  align-self: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
